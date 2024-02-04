@@ -22,6 +22,7 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
         'T' => 
         array (
             'Twig\\' => 5,
+            'Tests\\' => 6,
         ),
         'S' => 
         array (
@@ -72,6 +73,10 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
         ),
+        'Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
         'Symfony\\Polyfill\\Php81\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php81',
@@ -120,8 +125,8 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Container\\' => 
         array (

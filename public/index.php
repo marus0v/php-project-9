@@ -43,7 +43,13 @@ $router = $app->getRouteCollector()->getRouteParser();
 $app->get('/', function ($request, $response) use ($router) {
     // $router->urlFor('users');
     // $router->urlFor('user/new');
-    return $response->write('Welcome to Page-Analizer!');
-});
+    // return $response->write('Welcome to Page-Analizer!');
+    $params = [
+        'welcome' => 'Welcome to Page-Analizer!',
+        ];
+        return $this->get('renderer')->render($response, 'index.phtml', $params);
+        //            ->get('flash')->addMessage('success', 'This is a message');
+    })->setName('/');
+// });
 
 $app->run();
