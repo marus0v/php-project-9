@@ -19,6 +19,10 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
     );
 
     public static $prefixLengthsPsr4 = array (
+        'V' => 
+        array (
+            'Valitron\\' => 9,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -42,6 +46,7 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
             'Psr\\Http\\Server\\' => 16,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'PostgreSQLTutorial\\' => 19,
             'PhpParser\\' => 10,
         ),
         'L' => 
@@ -69,6 +74,10 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
     );
 
     public static $prefixDirsPsr4 = array (
+        'Valitron\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/valitron/src/Valitron',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -131,6 +140,10 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PostgreSQLTutorial\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
         'PhpParser\\' => 
         array (

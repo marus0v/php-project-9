@@ -4,3 +4,9 @@ start:
 
 setup:
 	composer install
+
+lint:
+	composer exec --verbose phpcs -- --standard=PSR12 public src
+
+validate:
+	composer validate

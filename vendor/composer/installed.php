@@ -3,7 +3,7 @@
         'name' => 'hexlet/code',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f56a08e357cc873e6230cb387907e90c4a0e9b3e',
+        'reference' => '27a37f4e879040e04af97074e81cb4dfbc32b743',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'hexlet/code' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f56a08e357cc873e6230cb387907e90c4a0e9b3e',
+            'reference' => '27a37f4e879040e04af97074e81cb4dfbc32b743',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -501,6 +501,15 @@
             'replaced' => array(
                 0 => 'v5.3.2',
             ),
+        ),
+        'vlucas/valitron' => array(
+            'pretty_version' => 'v1.4.11',
+            'version' => '1.4.11.0',
+            'reference' => 'fadce39f5f235755bb9794b2573af2d5bfcba85f',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../vlucas/valitron',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
     ),
 );
