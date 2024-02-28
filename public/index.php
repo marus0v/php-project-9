@@ -6,11 +6,15 @@ require __DIR__ . '/../vendor/autoload.php';
 // Подключение сторонних библиотек
 use Slim\Factory\AppFactory;
 use DI\Container;
+use Valitron\Validator;
 // use App\Validator;
-use App\PostgreSQLTutorial\Connection;
+// use App\PostgreSQLTutorial\Connection;
+use App\Connection;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Routing\RouteContext;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 // СТАРТ СЕССИИ
 session_start();
@@ -144,15 +148,15 @@ $app->get('/urls/{id:[0-9]+}', function ($request, $response, $args) {
 $app->post('/urls', function ($request, $response) {
     $url = $request->getParsedBodyParam('url');
 
-    $v = new Validator(['url_name' => $url['name']]);
-    $v->rule('required', 'url_name')->message('URL не должен быть пустым');
-    $v->rule('lengthMax', 'url_name', 255)->message('URL превышает 255 символов');
-    $v->rule('url', 'url_name')->message('Некорректный URL');
+    $valid = new Validator(['url_name' => $url['name']]);
+    $valid->rule('required', 'url_name')->message('URL не должен быть пустым');
+    $valid->rule('lengthMax', 'url_name', 255)->message('URL превышает 255 символов');
+    $valid->rule('url', 'url_name')->message('Некорректный URL');
 
-    if (!$v->validate()) {
+    if (!$valid->validate()) {
         $params = [
             'url' => $url['name'],
-            'errors' => $v->errors()
+            'errors' => $valid->errors()
         ];
         return $this->get('renderer')->render($response->withStatus(422), 'home.phtml', $params);
     }
