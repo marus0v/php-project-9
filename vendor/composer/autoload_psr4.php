@@ -33,7 +33,6 @@ return array(
     'Invoker\\' => array($vendorDir . '/php-di/invoker/src'),
     'Illuminate\\Support\\' => array($vendorDir . '/illuminate/collections', $vendorDir . '/illuminate/conditionable', $vendorDir . '/illuminate/macroable', $vendorDir . '/illuminate/support'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
-    'Hexlet\\Code\\' => array($baseDir . '/src'),
     'Fig\\Http\\Message\\' => array($vendorDir . '/fig/http-message-util/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
     'Doctrine\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Inflector'),

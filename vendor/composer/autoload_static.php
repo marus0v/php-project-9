@@ -71,10 +71,6 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Contracts\\' => 21,
         ),
-        'H' => 
-        array (
-            'Hexlet\\Code\\' => 12,
-        ),
         'F' => 
         array (
             'Fig\\Http\\Message\\' => 17,
@@ -211,10 +207,6 @@ class ComposerStaticInitdb2361301b31706a1a56df3d4bca73fb
         'Illuminate\\Contracts\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/contracts',
-        ),
-        'Hexlet\\Code\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
         'Fig\\Http\\Message\\' => 
         array (
