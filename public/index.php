@@ -5,6 +5,7 @@ require __DIR__ . '/../vendor/autoload.php';
 
 // Подключение сторонних библиотек
 use Slim\Factory\AppFactory;
+use Slim\Routing\RouteContext;
 use DI\Container;
 use Valitron\Validator;
 // use App\Validator;
@@ -12,9 +13,16 @@ use Valitron\Validator;
 use App\Connection;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
-use Slim\Routing\RouteContext;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\TransferException;
+use DiDom\Document;
+
 
 // СТАРТ СЕССИИ
 session_start();
