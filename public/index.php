@@ -8,8 +8,6 @@ use Slim\Factory\AppFactory;
 use Slim\Routing\RouteContext;
 use DI\Container;
 use Valitron\Validator;
-// use App\Validator;
-// use App\PostgreSQLTutorial\Connection;
 use App\Connection;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
