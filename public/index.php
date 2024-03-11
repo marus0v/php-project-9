@@ -53,21 +53,6 @@ $container->set('connection', function () {
     $conn = new App\Connection();
     return $conn->connect();
 });
-/*
-$databaseUrl = parse_url($_ENV['DATABASE_URL']);
-$username = $databaseUrl['user']; // marus
-$password = $databaseUrl['pass']; // s1ckmyduck
-$host = $databaseUrl['host']; // localhost
-$port = $databaseUrl['port']; // 5432
-$dbName = ltrim($databaseUrl['path'], '/');
-$dbNameLocal = 'marus_pa'; */
-
-/*try {
-    Connection::get()->connect();
-    echo 'A connection to the PostgreSQL database sever has been established successfully.';
-} catch (\PDOException $e) {
-    echo $e->getMessage();
-} */
 
 $container->set('renderer', function () use ($container) {
     $templateVars = [
@@ -81,20 +66,11 @@ $container->set('renderer', function () use ($container) {
 });
 
 // ДОМАШНЯЯ СТРАНИЦА
-/* $app->get('/', function ($request, $response) use ($router) {
-    // $router->urlFor('users');
-    // $router->urlFor('user/new');
-    // return $response->write('Welcome to Page-Analizer!');
-    $params = [
-        'welcome' => 'Welcome to Page-Analizer!',
-        ];
-        return $this->get('renderer')->render($response, 'index.phtml', $params);
-        //            ->get('flash')->addMessage('success', 'This is a message');
-    })->setName('/'); */
 $app->get('/', function ($request, $response) {
         return $this->get('renderer')->render($response, 'home.phtml');
     })->setName('home');
 
+// URLS
 $app->get('/urls', function ($request, $response) {
     $allUrls = $this->get('connection')
         ->query('SELECT id, name FROM urls ORDER BY id DESC')
@@ -127,6 +103,7 @@ $app->get('/urls', function ($request, $response) {
     return $this->get('renderer')->render($response, 'urls/index.phtml', $params);
 })->setName('urls.index');
 
+// URL отдельный
 $app->get('/urls/{id:[0-9]+}', function ($request, $response, $args) {
     $id = $args['id'];
 
@@ -151,6 +128,7 @@ $app->get('/urls/{id:[0-9]+}', function ($request, $response, $args) {
     return $this->get('renderer')->render($response, 'urls/show.phtml', $params);
 })->setName('urls.show');
 
+// URL добаавление
 $app->post('/urls', function ($request, $response) {
     $url = $request->getParsedBodyParam('url');
 
@@ -189,6 +167,7 @@ $app->post('/urls', function ($request, $response) {
     return $response->withRedirect($this->get('router')->urlFor('urls.show', ['id' => $lastInsertId]));
 })->setName('urls.store');
 
+// URL отдельный проверки
 $app->post('/urls/{url_id:[0-9]+}/checks', function ($request, $response, $args) {
     $urlId = $args['url_id'];
 
@@ -256,6 +235,5 @@ $app->post('/urls/{url_id:[0-9]+}/checks', function ($request, $response, $args)
 
     return $response->withRedirect($this->get('router')->urlFor('urls.show', ['id' => $urlId]));
 })->setName('urls.checks.store');
-
 
 $app->run();
